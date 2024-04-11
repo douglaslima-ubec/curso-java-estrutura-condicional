@@ -92,9 +92,67 @@ public class EstruturaCondicional {
 		} else {
 			duracao = horaFinal - horaInicial;
 		}
-		System.out.printf("O JOGO DUROU %d HORA(S)%n",duracao);
+		System.out.printf("O JOGO DUROU %d HORA(S)%n", duracao);
 	}
-	
-	
+
+	public static void calcularConta() {
+		Locale.setDefault(Locale.US);
+		int codigo = sc.nextInt();
+		int quantidade = sc.nextInt();
+		double preco = 0;
+		switch (codigo) {
+		case 1:
+			preco = 4.00;
+			break;
+		case 2:
+			preco = 4.50;
+			break;
+		case 3:
+			preco = 5.00;
+			break;
+		case 4:
+			preco = 2.00;
+			break;
+		case 5:
+			preco = 1.50;
+		}
+		double total = preco * quantidade;
+		System.out.printf("Total: R$ %.2f%n", total);
+	}
+
+	public static void calcularIntervalo() {
+		double valor = sc.nextDouble();
+		if (valor < 0 || valor > 100) {
+			System.out.println("Fora de intervalo");
+		} else if (valor <= 25) {
+			System.out.println("Intervalo [0,25]");
+		} else if (valor <= 50) {
+			System.out.println("Intervalo (25,50]");
+		} else if (valor <= 75) {
+			System.out.println("Intervalo (50,75]");
+		} else if (valor <= 100) {
+			System.out.println("Intervalo (75,100]");
+		}
+	}
+
+	public static void calcularPosicao() {
+		double x = sc.nextDouble();
+		double y = sc.nextDouble();
+		if (x == 0 && y == 0) {
+			System.out.println("Origem");
+		} else if (x == 0 && y != 0) {
+			System.out.println("Eixo Y");
+		} else if (y == 0 && x != 0) {
+			System.out.println("Eixo X");
+		} else if (x > 0 && y > 0) {
+			System.out.println("Q1");
+		} else if (x < 0 && y > 0) {
+			System.out.println("Q2");
+		} else if (x < 0 && y < 0) {
+			System.out.println("Q3");
+		} else if (x > 0 && y < 0) {
+			System.out.println("Q4");
+		}
+	}
 
 }
