@@ -7,8 +7,10 @@ public class Main {
 		EstruturaCondicional.diaDaSemana();
 		EstruturaCondicional.calcularDesconto();
 		EstruturaCondicional.numeroNegativoOuPositivo();
-		*/
 		EstruturaCondicional.numeroParOuImpar();
+		EstruturaCondicional.saoMultiplos();
+		*/
+		EstruturaCondicional.calcularDuracaoJogo();
 	}
 
 }
