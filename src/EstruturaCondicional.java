@@ -1,12 +1,10 @@
 import java.util.Scanner;
-import java.util.Locale;
 
 public class EstruturaCondicional {
 
 	private static Scanner sc = new Scanner(System.in);
 
 	public static void calcularValorTelefonia() {
-		Locale.setDefault(Locale.US);
 		int minutos = sc.nextInt(); // lê a quantidade de minutos
 		double valor = 50;
 		if (minutos > 100) {
@@ -96,7 +94,6 @@ public class EstruturaCondicional {
 	}
 
 	public static void calcularConta() {
-		Locale.setDefault(Locale.US);
 		int codigo = sc.nextInt();
 		int quantidade = sc.nextInt();
 		double preco = 0;
@@ -152,6 +149,23 @@ public class EstruturaCondicional {
 			System.out.println("Q3");
 		} else if (x > 0 && y < 0) {
 			System.out.println("Q4");
+		}
+	}
+
+	public static void calcularImposto() {
+		double salario = sc.nextDouble();
+		double imposto = 0;
+		if (salario <= 2000.00) {
+			System.out.println("Isento");
+		} else if (salario <= 3000.00) {
+			imposto += (salario - 2000.00) * 0.08;
+			System.out.printf("R$ %.2f%n",imposto);
+		} else if (salario <= 4500.00) {
+			imposto += 1000.00 * 0.08 + (salario - 3000.00) * 0.18;
+			System.out.printf("R$ %.2f%n",imposto);
+		} else {
+			imposto += 1000.00 * 0.08 + 1500.00 * 0.18 + (salario - 4500.00) * 0.28;
+			System.out.printf("R$ %.2f%n",imposto);
 		}
 	}
 
